@@ -7,6 +7,7 @@
   --line: #c8ccd4;         /* grid line color                      */
   --bg: #f4f6fa;           /* page + clue background               */
   --cell-bg: #ffffff;      /* an empty playable square             */
+  --cell-bg-hover: #eeeeee9c;	
   --ink: #2b3038;          /* text and filled squares              */
   --clue-ink: #4a5060;     /* clue numbers                         */
 }
@@ -105,5 +106,26 @@ h1 {
 .win { font-size: 18px; font-weight: 600; }
 
 
-/* State logic
-   ----------- */
+/* State logic ----------- */
+
+/* shade the cell when hovered */
+.cell:hover {
+	background: var(--cell-bg-hover);
+}
+
+/* hide all state labels by default */
+.cell label {
+	display: none;
+}
+
+/* filled cells should be coloured */
+.cell:has(.s-fill:checked)  {
+	background: var(--ink);
+}
+.cell:has(.s-fill:checked):hover  {
+	opacity: .3;
+}
+
+/* Clicking an empty cell fills it, and vice versa */
+.s-empty:checked ~ .to-fill,
+.s-fill:checked ~ .to-empty { display: block; }
