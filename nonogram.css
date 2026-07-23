@@ -9,6 +9,7 @@
   --cell-bg: #ffffff;      /* an empty playable square             */
   --cell-bg-hover: #eeeeee9c;
   --ink: #2b3038;          /* text and filled squares              */
+  --mark: #eeeeee1c;
   --clue-ink: #4a5060;     /* clue numbers                         */
 }
 
@@ -105,7 +106,7 @@ h1 {
 
 .mode-switch {
   display: inline-flex;
-  font-size: 14px;
+  font-size: 0.875rem;
   cursor: pointer;
   user-select: none;
   border: var(--line-w) solid var(--line);
@@ -150,10 +151,36 @@ h1 {
 .cell:has(.s-fill:checked)  {
 	background: var(--ink);
 }
-.cell:has(.s-fill:checked):hover  {
+.cell:has(.s-fill:checked):hover{
 	opacity: .3;
 }
+/* marked cells just have an X */
+.cell:has(.s-mark:checked)::before {
+	content: '\2715';
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	pointer-events: none;
+}
 
-/* Clicking an empty cell fills it, and vice versa */
-.s-empty:checked ~ .to-fill,
-.s-fill:checked ~ .to-empty { display: block; }
+/* Fill Mode */
+
+/* Clicking an empty or marked cell fills it,
+	clicking a filled cell empties it
+ */
+.mode:not(:checked) ~ .board .s-empty:checked ~ .to-fill,
+.mode:not(:checked) ~ .board .s-fill:checked ~ .to-empty,
+.mode:not(:checked) ~ .board .s-mark:checked ~ .to-fill
+{ display: block; }
+
+/* Mark Mode */
+
+/* Clicking an empty or filled cell marks it,
+	clicking a marked cell empties it
+*/
+.mode:checked ~ .board .s-empty:checked ~ .to-mark,
+.mode:checked ~ .board .s-mark:checked ~ .to-empty,
+.mode:checked ~ .board .s-fill:checked ~ .to-mark
+{ display: block; }
+
