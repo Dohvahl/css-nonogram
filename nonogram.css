@@ -11,6 +11,7 @@
   --ink: #2b3038;          /* text and filled squares              */
   --mark: #eeeeee1c;
   --clue-ink: #4a5060;     /* clue numbers                         */
+  --clue-done: #c3c8d1;    /* a clue whose line is solved          */
 }
 
 * { box-sizing: border-box; }
@@ -71,6 +72,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.25s ease;
 }
 
 .col-clue { flex-direction: column; padding: 0.375rem 0; min-height: var(--cell); }
@@ -199,7 +201,14 @@ h1 {
 
 
 /* ---- Solution Checking ---- */
+
+/* Check if the full puzzle is solved */
 .puzzle:not(:has(.sol-fill .s-fill:not(:checked), .sol-empty .s-fill:checked)) .win {
 	opacity: 1;
 	transform: none;
+}
+
+/* Row Solution checking */
+.row:not(:has(.sol-fill .s-fill:not(:checked), .sol-empty .s-fill:checked)) .row-clue {
+	color: var(--clue-done);
 }
