@@ -7,7 +7,7 @@
   --line: #c8ccd4;         /* grid line color                      */
   --bg: #f4f6fa;           /* page + clue background               */
   --cell-bg: #ffffff;      /* an empty playable square             */
-  --cell-bg-hover: #eeeeee9c;	
+  --cell-bg-hover: #eeeeee9c;
   --ink: #2b3038;          /* text and filled squares              */
   --clue-ink: #4a5060;     /* clue numbers                         */
 }
