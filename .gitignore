@@ -1,0 +1,19 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE and Code Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Local Server / Browser sync (if used)
+.sass-cache/
+.eslintcache
+
+# Hide planning docs
+docs/
