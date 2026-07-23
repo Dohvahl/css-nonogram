@@ -132,7 +132,20 @@ h1 {
   outline-offset: 0.125rem;
 }
 
-.win { font-size: 18px; font-weight: 600; }
+/* Hidden via opacity (not display) so it can fade; the reveal rule
+   lives in the state-logic section below. */
+.win {
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--cell-bg);
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
 
 
 /* State logic ----------- */
@@ -184,3 +197,9 @@ h1 {
 .mode:checked ~ .board .s-fill:checked ~ .to-mark
 { display: block; }
 
+
+/* ---- Solution Checking ---- */
+.puzzle:not(:has(.sol-fill .s-fill:not(:checked), .sol-empty .s-fill:checked)) .win {
+	opacity: 1;
+	transform: none;
+}
