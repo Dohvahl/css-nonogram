@@ -100,8 +100,36 @@ h1 {
   cursor: pointer;
 }
 
+/* Checkbox is hidden but kept focusable; the label is the switch. */
 .mode { position: absolute; opacity: 0; pointer-events: none; }
-.mode-switch { font-size: 14px; color: var(--clue-ink); cursor: pointer; }
+
+.mode-switch {
+  display: inline-flex;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  border: var(--line-w) solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.mode-switch span {
+  padding: 0.35rem 1.1rem;
+  color: var(--clue-ink);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+/* The active half follows the checkbox: unchecked = Fill, checked = Mark. */
+.mode:not(:checked) ~ .mode-switch .mode-fill,
+.mode:checked ~ .mode-switch .mode-mark {
+  background: var(--ink);
+  color: var(--cell-bg);
+}
+
+.mode:focus-visible ~ .mode-switch {
+  outline: 0.125rem solid var(--ink);
+  outline-offset: 0.125rem;
+}
 
 .win { font-size: 18px; font-weight: 600; }
 
