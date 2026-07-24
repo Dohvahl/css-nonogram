@@ -4,7 +4,9 @@
   --cell: 2.75rem;         /* size of one playable square         */
   --clue-w: 4.25rem;       /* width of the row-clue gutter         */
   --line-w: 0.0625rem;     /* grid line thickness (~1px hairline)  */
+  --line-strong-w: .125rem;
   --line: #c8ccd4;         /* grid line color                      */
+  --line-strong: #65676d83;
   --bg: #f4f6fa;           /* page + clue background               */
   --cell-bg: #ffffff;      /* an empty playable square             */
   --cell-bg-hover: #eeeeee9c;
@@ -57,9 +59,19 @@ h1 {
 .col-clues,
 .row {
   display: grid;
-  grid-template-columns: var(--clue-w) repeat(5, var(--cell));
+  grid-template-columns: var(--clue-w) repeat(var(--cols, 5), var(--cell));
   gap: var(--line-w);
   background: var(--line);
+}
+
+/* thicker line after every 5th column */
+.row .cell:nth-child(5n + 6):not(:last-child) {
+  border-right: var(--line-strong-w) solid var(--line-strong);
+}
+
+/* thicker line after every 5th row */
+.board > .row:nth-child(5n + 6):not(:last-child) {
+  border-bottom: var(--line-strong-w) solid var(--line-strong);
 }
 
 /* Clue cells */

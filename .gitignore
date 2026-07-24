@@ -17,3 +17,6 @@ Thumbs.db
 
 # Hide planning docs
 docs/
+
+# Node stuff
+node_modules/

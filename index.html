@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Nonogram</title>
   <link rel="stylesheet" href="nonogram.css">
+  <link rel="stylesheet" href="puzzle.generated.css">
 </head>
 <body>
   <main class="puzzle">
     <h1>Nonogram</h1>
 
-    <!-- Unchecked = fill mode, checked = mark mode. -->
+	<!-- Unchecked = fill mode, checked = mark mode. -->
     <input type="checkbox" id="mode-mark" class="mode">
     <label class="mode-switch" for="mode-mark">
       <span class="mode-fill">Fill</span>
@@ -18,241 +19,975 @@
     </label>
 
     <div class="board">
-      <!-- clue-spacer sits above the row-clue gutter so the five column
-           numbers line up over their cells. -->
-      <div class="col-clues">
-        <div class="clue-spacer"></div>
-        <div class="col-clue cc1"><span>2</span></div>
-        <div class="col-clue cc2"><span>4</span></div>
-        <div class="col-clue cc3"><span>4</span></div>
-        <div class="col-clue cc4"><span>4</span></div>
-        <div class="col-clue cc5"><span>2</span></div>
-      </div>
 
-      <!-- Row 1 : . # . # .  ->  clue 1 1 -->
-      <div class="row r1">
-        <div class="row-clue"><span>1</span><span>1</span></div>
-        <div class="cell c1 sol-empty">
-          <input type="radio" name="r1c1" id="r1c1-e" class="s s-empty" checked>
-          <input type="radio" name="r1c1" id="r1c1-f" class="s s-fill">
-          <input type="radio" name="r1c1" id="r1c1-m" class="s s-mark">
-          <label class="to-fill"  for="r1c1-f"></label>
-          <label class="to-mark"  for="r1c1-m"></label>
-          <label class="to-empty" for="r1c1-e"></label>
-        </div>
-        <div class="cell c2 sol-fill">
-          <input type="radio" name="r1c2" id="r1c2-e" class="s s-empty" checked>
-          <input type="radio" name="r1c2" id="r1c2-f" class="s s-fill">
-          <input type="radio" name="r1c2" id="r1c2-m" class="s s-mark">
-          <label class="to-fill"  for="r1c2-f"></label>
-          <label class="to-mark"  for="r1c2-m"></label>
-          <label class="to-empty" for="r1c2-e"></label>
-        </div>
-        <div class="cell c3 sol-empty">
-          <input type="radio" name="r1c3" id="r1c3-e" class="s s-empty" checked>
-          <input type="radio" name="r1c3" id="r1c3-f" class="s s-fill">
-          <input type="radio" name="r1c3" id="r1c3-m" class="s s-mark">
-          <label class="to-fill"  for="r1c3-f"></label>
-          <label class="to-mark"  for="r1c3-m"></label>
-          <label class="to-empty" for="r1c3-e"></label>
-        </div>
-        <div class="cell c4 sol-fill">
-          <input type="radio" name="r1c4" id="r1c4-e" class="s s-empty" checked>
-          <input type="radio" name="r1c4" id="r1c4-f" class="s s-fill">
-          <input type="radio" name="r1c4" id="r1c4-m" class="s s-mark">
-          <label class="to-fill"  for="r1c4-f"></label>
-          <label class="to-mark"  for="r1c4-m"></label>
-          <label class="to-empty" for="r1c4-e"></label>
-        </div>
-        <div class="cell c5 sol-empty">
-          <input type="radio" name="r1c5" id="r1c5-e" class="s s-empty" checked>
-          <input type="radio" name="r1c5" id="r1c5-f" class="s s-fill">
-          <input type="radio" name="r1c5" id="r1c5-m" class="s s-mark">
-          <label class="to-fill"  for="r1c5-f"></label>
-          <label class="to-mark"  for="r1c5-m"></label>
-          <label class="to-empty" for="r1c5-e"></label>
-        </div>
-      </div>
+		<div class="col-clues">
+			<div class="clue-spacer"></div>
+			
+			<div class="col-clue cc1"><span>6</span></div>
+			<div class="col-clue cc2"><span>1</span><span>1</span></div>
+			<div class="col-clue cc3"><span>1</span><span>2</span><span>1</span><span>1</span></div>
+			<div class="col-clue cc4"><span>1</span><span>2</span><span>1</span><span>1</span></div>
+			<div class="col-clue cc5"><span>1</span><span>1</span><span>1</span></div>
+			<div class="col-clue cc6"><span>1</span><span>1</span><span>1</span></div>
+			<div class="col-clue cc7"><span>1</span><span>2</span><span>1</span><span>1</span></div>
+			<div class="col-clue cc8"><span>1</span><span>2</span><span>1</span><span>1</span></div>
+			<div class="col-clue cc9"><span>1</span><span>1</span></div>
+			<div class="col-clue cc10"><span>6</span></div>
+		</div>
+	
 
-      <!-- Row 2 : # # # # #  ->  clue 5 -->
-      <div class="row r2">
-        <div class="row-clue"><span>5</span></div>
-        <div class="cell c1 sol-fill">
-          <input type="radio" name="r2c1" id="r2c1-e" class="s s-empty" checked>
-          <input type="radio" name="r2c1" id="r2c1-f" class="s s-fill">
-          <input type="radio" name="r2c1" id="r2c1-m" class="s s-mark">
-          <label class="to-fill"  for="r2c1-f"></label>
-          <label class="to-mark"  for="r2c1-m"></label>
-          <label class="to-empty" for="r2c1-e"></label>
-        </div>
-        <div class="cell c2 sol-fill">
-          <input type="radio" name="r2c2" id="r2c2-e" class="s s-empty" checked>
-          <input type="radio" name="r2c2" id="r2c2-f" class="s s-fill">
-          <input type="radio" name="r2c2" id="r2c2-m" class="s s-mark">
-          <label class="to-fill"  for="r2c2-f"></label>
-          <label class="to-mark"  for="r2c2-m"></label>
-          <label class="to-empty" for="r2c2-e"></label>
-        </div>
-        <div class="cell c3 sol-fill">
-          <input type="radio" name="r2c3" id="r2c3-e" class="s s-empty" checked>
-          <input type="radio" name="r2c3" id="r2c3-f" class="s s-fill">
-          <input type="radio" name="r2c3" id="r2c3-m" class="s s-mark">
-          <label class="to-fill"  for="r2c3-f"></label>
-          <label class="to-mark"  for="r2c3-m"></label>
-          <label class="to-empty" for="r2c3-e"></label>
-        </div>
-        <div class="cell c4 sol-fill">
-          <input type="radio" name="r2c4" id="r2c4-e" class="s s-empty" checked>
-          <input type="radio" name="r2c4" id="r2c4-f" class="s s-fill">
-          <input type="radio" name="r2c4" id="r2c4-m" class="s s-mark">
-          <label class="to-fill"  for="r2c4-f"></label>
-          <label class="to-mark"  for="r2c4-m"></label>
-          <label class="to-empty" for="r2c4-e"></label>
-        </div>
-        <div class="cell c5 sol-fill">
-          <input type="radio" name="r2c5" id="r2c5-e" class="s s-empty" checked>
-          <input type="radio" name="r2c5" id="r2c5-f" class="s s-fill">
-          <input type="radio" name="r2c5" id="r2c5-m" class="s s-mark">
-          <label class="to-fill"  for="r2c5-f"></label>
-          <label class="to-mark"  for="r2c5-m"></label>
-          <label class="to-empty" for="r2c5-e"></label>
-        </div>
-      </div>
+		
+		<div class="row r1">
+			<div class="row-clue"><span>6</span></div>
 
-      <!-- Row 3 : # # # # #  ->  clue 5 -->
-      <div class="row r3">
-        <div class="row-clue"><span>5</span></div>
-        <div class="cell c1 sol-fill">
-          <input type="radio" name="r3c1" id="r3c1-e" class="s s-empty" checked>
-          <input type="radio" name="r3c1" id="r3c1-f" class="s s-fill">
-          <input type="radio" name="r3c1" id="r3c1-m" class="s s-mark">
-          <label class="to-fill"  for="r3c1-f"></label>
-          <label class="to-mark"  for="r3c1-m"></label>
-          <label class="to-empty" for="r3c1-e"></label>
-        </div>
-        <div class="cell c2 sol-fill">
-          <input type="radio" name="r3c2" id="r3c2-e" class="s s-empty" checked>
-          <input type="radio" name="r3c2" id="r3c2-f" class="s s-fill">
-          <input type="radio" name="r3c2" id="r3c2-m" class="s s-mark">
-          <label class="to-fill"  for="r3c2-f"></label>
-          <label class="to-mark"  for="r3c2-m"></label>
-          <label class="to-empty" for="r3c2-e"></label>
-        </div>
-        <div class="cell c3 sol-fill">
-          <input type="radio" name="r3c3" id="r3c3-e" class="s s-empty" checked>
-          <input type="radio" name="r3c3" id="r3c3-f" class="s s-fill">
-          <input type="radio" name="r3c3" id="r3c3-m" class="s s-mark">
-          <label class="to-fill"  for="r3c3-f"></label>
-          <label class="to-mark"  for="r3c3-m"></label>
-          <label class="to-empty" for="r3c3-e"></label>
-        </div>
-        <div class="cell c4 sol-fill">
-          <input type="radio" name="r3c4" id="r3c4-e" class="s s-empty" checked>
-          <input type="radio" name="r3c4" id="r3c4-f" class="s s-fill">
-          <input type="radio" name="r3c4" id="r3c4-m" class="s s-mark">
-          <label class="to-fill"  for="r3c4-f"></label>
-          <label class="to-mark"  for="r3c4-m"></label>
-          <label class="to-empty" for="r3c4-e"></label>
-        </div>
-        <div class="cell c5 sol-fill">
-          <input type="radio" name="r3c5" id="r3c5-e" class="s s-empty" checked>
-          <input type="radio" name="r3c5" id="r3c5-f" class="s s-fill">
-          <input type="radio" name="r3c5" id="r3c5-m" class="s s-mark">
-          <label class="to-fill"  for="r3c5-f"></label>
-          <label class="to-mark"  for="r3c5-m"></label>
-          <label class="to-empty" for="r3c5-e"></label>
-        </div>
-      </div>
+			<div class="cell c1 sol-empty">
+				<input type="radio" name="r1c1" id="r1c1-e" class="s s-empty" checked>
+				<input type="radio" name="r1c1" id="r1c1-f" class="s s-fill">
+				<input type="radio" name="r1c1" id="r1c1-m" class="s s-mark">
+				<label class="to-fill"  for="r1c1-f"></label>
+				<label class="to-mark"  for="r1c1-m"></label>
+				<label class="to-empty" for="r1c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r1c2" id="r1c2-e" class="s s-empty" checked>
+				<input type="radio" name="r1c2" id="r1c2-f" class="s s-fill">
+				<input type="radio" name="r1c2" id="r1c2-m" class="s s-mark">
+				<label class="to-fill"  for="r1c2-f"></label>
+				<label class="to-mark"  for="r1c2-m"></label>
+				<label class="to-empty" for="r1c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-fill">
+				<input type="radio" name="r1c3" id="r1c3-e" class="s s-empty" checked>
+				<input type="radio" name="r1c3" id="r1c3-f" class="s s-fill">
+				<input type="radio" name="r1c3" id="r1c3-m" class="s s-mark">
+				<label class="to-fill"  for="r1c3-f"></label>
+				<label class="to-mark"  for="r1c3-m"></label>
+				<label class="to-empty" for="r1c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-fill">
+				<input type="radio" name="r1c4" id="r1c4-e" class="s s-empty" checked>
+				<input type="radio" name="r1c4" id="r1c4-f" class="s s-fill">
+				<input type="radio" name="r1c4" id="r1c4-m" class="s s-mark">
+				<label class="to-fill"  for="r1c4-f"></label>
+				<label class="to-mark"  for="r1c4-m"></label>
+				<label class="to-empty" for="r1c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-fill">
+				<input type="radio" name="r1c5" id="r1c5-e" class="s s-empty" checked>
+				<input type="radio" name="r1c5" id="r1c5-f" class="s s-fill">
+				<input type="radio" name="r1c5" id="r1c5-m" class="s s-mark">
+				<label class="to-fill"  for="r1c5-f"></label>
+				<label class="to-mark"  for="r1c5-m"></label>
+				<label class="to-empty" for="r1c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-fill">
+				<input type="radio" name="r1c6" id="r1c6-e" class="s s-empty" checked>
+				<input type="radio" name="r1c6" id="r1c6-f" class="s s-fill">
+				<input type="radio" name="r1c6" id="r1c6-m" class="s s-mark">
+				<label class="to-fill"  for="r1c6-f"></label>
+				<label class="to-mark"  for="r1c6-m"></label>
+				<label class="to-empty" for="r1c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-fill">
+				<input type="radio" name="r1c7" id="r1c7-e" class="s s-empty" checked>
+				<input type="radio" name="r1c7" id="r1c7-f" class="s s-fill">
+				<input type="radio" name="r1c7" id="r1c7-m" class="s s-mark">
+				<label class="to-fill"  for="r1c7-f"></label>
+				<label class="to-mark"  for="r1c7-m"></label>
+				<label class="to-empty" for="r1c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-fill">
+				<input type="radio" name="r1c8" id="r1c8-e" class="s s-empty" checked>
+				<input type="radio" name="r1c8" id="r1c8-f" class="s s-fill">
+				<input type="radio" name="r1c8" id="r1c8-m" class="s s-mark">
+				<label class="to-fill"  for="r1c8-f"></label>
+				<label class="to-mark"  for="r1c8-m"></label>
+				<label class="to-empty" for="r1c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r1c9" id="r1c9-e" class="s s-empty" checked>
+				<input type="radio" name="r1c9" id="r1c9-f" class="s s-fill">
+				<input type="radio" name="r1c9" id="r1c9-m" class="s s-mark">
+				<label class="to-fill"  for="r1c9-f"></label>
+				<label class="to-mark"  for="r1c9-m"></label>
+				<label class="to-empty" for="r1c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-empty">
+				<input type="radio" name="r1c10" id="r1c10-e" class="s s-empty" checked>
+				<input type="radio" name="r1c10" id="r1c10-f" class="s s-fill">
+				<input type="radio" name="r1c10" id="r1c10-m" class="s s-mark">
+				<label class="to-fill"  for="r1c10-f"></label>
+				<label class="to-mark"  for="r1c10-m"></label>
+				<label class="to-empty" for="r1c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r2">
+			<div class="row-clue"><span>1</span><span>1</span></div>
 
-      <!-- Row 4 : . # # # .  ->  clue 3 -->
-      <div class="row r4">
-        <div class="row-clue"><span>3</span></div>
-        <div class="cell c1 sol-empty">
-          <input type="radio" name="r4c1" id="r4c1-e" class="s s-empty" checked>
-          <input type="radio" name="r4c1" id="r4c1-f" class="s s-fill">
-          <input type="radio" name="r4c1" id="r4c1-m" class="s s-mark">
-          <label class="to-fill"  for="r4c1-f"></label>
-          <label class="to-mark"  for="r4c1-m"></label>
-          <label class="to-empty" for="r4c1-e"></label>
-        </div>
-        <div class="cell c2 sol-fill">
-          <input type="radio" name="r4c2" id="r4c2-e" class="s s-empty" checked>
-          <input type="radio" name="r4c2" id="r4c2-f" class="s s-fill">
-          <input type="radio" name="r4c2" id="r4c2-m" class="s s-mark">
-          <label class="to-fill"  for="r4c2-f"></label>
-          <label class="to-mark"  for="r4c2-m"></label>
-          <label class="to-empty" for="r4c2-e"></label>
-        </div>
-        <div class="cell c3 sol-fill">
-          <input type="radio" name="r4c3" id="r4c3-e" class="s s-empty" checked>
-          <input type="radio" name="r4c3" id="r4c3-f" class="s s-fill">
-          <input type="radio" name="r4c3" id="r4c3-m" class="s s-mark">
-          <label class="to-fill"  for="r4c3-f"></label>
-          <label class="to-mark"  for="r4c3-m"></label>
-          <label class="to-empty" for="r4c3-e"></label>
-        </div>
-        <div class="cell c4 sol-fill">
-          <input type="radio" name="r4c4" id="r4c4-e" class="s s-empty" checked>
-          <input type="radio" name="r4c4" id="r4c4-f" class="s s-fill">
-          <input type="radio" name="r4c4" id="r4c4-m" class="s s-mark">
-          <label class="to-fill"  for="r4c4-f"></label>
-          <label class="to-mark"  for="r4c4-m"></label>
-          <label class="to-empty" for="r4c4-e"></label>
-        </div>
-        <div class="cell c5 sol-empty">
-          <input type="radio" name="r4c5" id="r4c5-e" class="s s-empty" checked>
-          <input type="radio" name="r4c5" id="r4c5-f" class="s s-fill">
-          <input type="radio" name="r4c5" id="r4c5-m" class="s s-mark">
-          <label class="to-fill"  for="r4c5-f"></label>
-          <label class="to-mark"  for="r4c5-m"></label>
-          <label class="to-empty" for="r4c5-e"></label>
-        </div>
-      </div>
+			<div class="cell c1 sol-empty">
+				<input type="radio" name="r2c1" id="r2c1-e" class="s s-empty" checked>
+				<input type="radio" name="r2c1" id="r2c1-f" class="s s-fill">
+				<input type="radio" name="r2c1" id="r2c1-m" class="s s-mark">
+				<label class="to-fill"  for="r2c1-f"></label>
+				<label class="to-mark"  for="r2c1-m"></label>
+				<label class="to-empty" for="r2c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-fill">
+				<input type="radio" name="r2c2" id="r2c2-e" class="s s-empty" checked>
+				<input type="radio" name="r2c2" id="r2c2-f" class="s s-fill">
+				<input type="radio" name="r2c2" id="r2c2-m" class="s s-mark">
+				<label class="to-fill"  for="r2c2-f"></label>
+				<label class="to-mark"  for="r2c2-m"></label>
+				<label class="to-empty" for="r2c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-empty">
+				<input type="radio" name="r2c3" id="r2c3-e" class="s s-empty" checked>
+				<input type="radio" name="r2c3" id="r2c3-f" class="s s-fill">
+				<input type="radio" name="r2c3" id="r2c3-m" class="s s-mark">
+				<label class="to-fill"  for="r2c3-f"></label>
+				<label class="to-mark"  for="r2c3-m"></label>
+				<label class="to-empty" for="r2c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-empty">
+				<input type="radio" name="r2c4" id="r2c4-e" class="s s-empty" checked>
+				<input type="radio" name="r2c4" id="r2c4-f" class="s s-fill">
+				<input type="radio" name="r2c4" id="r2c4-m" class="s s-mark">
+				<label class="to-fill"  for="r2c4-f"></label>
+				<label class="to-mark"  for="r2c4-m"></label>
+				<label class="to-empty" for="r2c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r2c5" id="r2c5-e" class="s s-empty" checked>
+				<input type="radio" name="r2c5" id="r2c5-f" class="s s-fill">
+				<input type="radio" name="r2c5" id="r2c5-m" class="s s-mark">
+				<label class="to-fill"  for="r2c5-f"></label>
+				<label class="to-mark"  for="r2c5-m"></label>
+				<label class="to-empty" for="r2c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r2c6" id="r2c6-e" class="s s-empty" checked>
+				<input type="radio" name="r2c6" id="r2c6-f" class="s s-fill">
+				<input type="radio" name="r2c6" id="r2c6-m" class="s s-mark">
+				<label class="to-fill"  for="r2c6-f"></label>
+				<label class="to-mark"  for="r2c6-m"></label>
+				<label class="to-empty" for="r2c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-empty">
+				<input type="radio" name="r2c7" id="r2c7-e" class="s s-empty" checked>
+				<input type="radio" name="r2c7" id="r2c7-f" class="s s-fill">
+				<input type="radio" name="r2c7" id="r2c7-m" class="s s-mark">
+				<label class="to-fill"  for="r2c7-f"></label>
+				<label class="to-mark"  for="r2c7-m"></label>
+				<label class="to-empty" for="r2c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-empty">
+				<input type="radio" name="r2c8" id="r2c8-e" class="s s-empty" checked>
+				<input type="radio" name="r2c8" id="r2c8-f" class="s s-fill">
+				<input type="radio" name="r2c8" id="r2c8-m" class="s s-mark">
+				<label class="to-fill"  for="r2c8-f"></label>
+				<label class="to-mark"  for="r2c8-m"></label>
+				<label class="to-empty" for="r2c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-fill">
+				<input type="radio" name="r2c9" id="r2c9-e" class="s s-empty" checked>
+				<input type="radio" name="r2c9" id="r2c9-f" class="s s-fill">
+				<input type="radio" name="r2c9" id="r2c9-m" class="s s-mark">
+				<label class="to-fill"  for="r2c9-f"></label>
+				<label class="to-mark"  for="r2c9-m"></label>
+				<label class="to-empty" for="r2c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-empty">
+				<input type="radio" name="r2c10" id="r2c10-e" class="s s-empty" checked>
+				<input type="radio" name="r2c10" id="r2c10-f" class="s s-fill">
+				<input type="radio" name="r2c10" id="r2c10-m" class="s s-mark">
+				<label class="to-fill"  for="r2c10-f"></label>
+				<label class="to-mark"  for="r2c10-m"></label>
+				<label class="to-empty" for="r2c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r3">
+			<div class="row-clue"><span>1</span><span>1</span></div>
 
-      <!-- Row 5 : . . # . .  ->  clue 1 -->
-      <div class="row r5">
-        <div class="row-clue"><span>1</span></div>
-        <div class="cell c1 sol-empty">
-          <input type="radio" name="r5c1" id="r5c1-e" class="s s-empty" checked>
-          <input type="radio" name="r5c1" id="r5c1-f" class="s s-fill">
-          <input type="radio" name="r5c1" id="r5c1-m" class="s s-mark">
-          <label class="to-fill"  for="r5c1-f"></label>
-          <label class="to-mark"  for="r5c1-m"></label>
-          <label class="to-empty" for="r5c1-e"></label>
-        </div>
-        <div class="cell c2 sol-empty">
-          <input type="radio" name="r5c2" id="r5c2-e" class="s s-empty" checked>
-          <input type="radio" name="r5c2" id="r5c2-f" class="s s-fill">
-          <input type="radio" name="r5c2" id="r5c2-m" class="s s-mark">
-          <label class="to-fill"  for="r5c2-f"></label>
-          <label class="to-mark"  for="r5c2-m"></label>
-          <label class="to-empty" for="r5c2-e"></label>
-        </div>
-        <div class="cell c3 sol-fill">
-          <input type="radio" name="r5c3" id="r5c3-e" class="s s-empty" checked>
-          <input type="radio" name="r5c3" id="r5c3-f" class="s s-fill">
-          <input type="radio" name="r5c3" id="r5c3-m" class="s s-mark">
-          <label class="to-fill"  for="r5c3-f"></label>
-          <label class="to-mark"  for="r5c3-m"></label>
-          <label class="to-empty" for="r5c3-e"></label>
-        </div>
-        <div class="cell c4 sol-empty">
-          <input type="radio" name="r5c4" id="r5c4-e" class="s s-empty" checked>
-          <input type="radio" name="r5c4" id="r5c4-f" class="s s-fill">
-          <input type="radio" name="r5c4" id="r5c4-m" class="s s-mark">
-          <label class="to-fill"  for="r5c4-f"></label>
-          <label class="to-mark"  for="r5c4-m"></label>
-          <label class="to-empty" for="r5c4-e"></label>
-        </div>
-        <div class="cell c5 sol-empty">
-          <input type="radio" name="r5c5" id="r5c5-e" class="s s-empty" checked>
-          <input type="radio" name="r5c5" id="r5c5-f" class="s s-fill">
-          <input type="radio" name="r5c5" id="r5c5-m" class="s s-mark">
-          <label class="to-fill"  for="r5c5-f"></label>
-          <label class="to-mark"  for="r5c5-m"></label>
-          <label class="to-empty" for="r5c5-e"></label>
-        </div>
-      </div>
+			<div class="cell c1 sol-fill">
+				<input type="radio" name="r3c1" id="r3c1-e" class="s s-empty" checked>
+				<input type="radio" name="r3c1" id="r3c1-f" class="s s-fill">
+				<input type="radio" name="r3c1" id="r3c1-m" class="s s-mark">
+				<label class="to-fill"  for="r3c1-f"></label>
+				<label class="to-mark"  for="r3c1-m"></label>
+				<label class="to-empty" for="r3c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r3c2" id="r3c2-e" class="s s-empty" checked>
+				<input type="radio" name="r3c2" id="r3c2-f" class="s s-fill">
+				<input type="radio" name="r3c2" id="r3c2-m" class="s s-mark">
+				<label class="to-fill"  for="r3c2-f"></label>
+				<label class="to-mark"  for="r3c2-m"></label>
+				<label class="to-empty" for="r3c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-empty">
+				<input type="radio" name="r3c3" id="r3c3-e" class="s s-empty" checked>
+				<input type="radio" name="r3c3" id="r3c3-f" class="s s-fill">
+				<input type="radio" name="r3c3" id="r3c3-m" class="s s-mark">
+				<label class="to-fill"  for="r3c3-f"></label>
+				<label class="to-mark"  for="r3c3-m"></label>
+				<label class="to-empty" for="r3c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-empty">
+				<input type="radio" name="r3c4" id="r3c4-e" class="s s-empty" checked>
+				<input type="radio" name="r3c4" id="r3c4-f" class="s s-fill">
+				<input type="radio" name="r3c4" id="r3c4-m" class="s s-mark">
+				<label class="to-fill"  for="r3c4-f"></label>
+				<label class="to-mark"  for="r3c4-m"></label>
+				<label class="to-empty" for="r3c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r3c5" id="r3c5-e" class="s s-empty" checked>
+				<input type="radio" name="r3c5" id="r3c5-f" class="s s-fill">
+				<input type="radio" name="r3c5" id="r3c5-m" class="s s-mark">
+				<label class="to-fill"  for="r3c5-f"></label>
+				<label class="to-mark"  for="r3c5-m"></label>
+				<label class="to-empty" for="r3c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r3c6" id="r3c6-e" class="s s-empty" checked>
+				<input type="radio" name="r3c6" id="r3c6-f" class="s s-fill">
+				<input type="radio" name="r3c6" id="r3c6-m" class="s s-mark">
+				<label class="to-fill"  for="r3c6-f"></label>
+				<label class="to-mark"  for="r3c6-m"></label>
+				<label class="to-empty" for="r3c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-empty">
+				<input type="radio" name="r3c7" id="r3c7-e" class="s s-empty" checked>
+				<input type="radio" name="r3c7" id="r3c7-f" class="s s-fill">
+				<input type="radio" name="r3c7" id="r3c7-m" class="s s-mark">
+				<label class="to-fill"  for="r3c7-f"></label>
+				<label class="to-mark"  for="r3c7-m"></label>
+				<label class="to-empty" for="r3c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-empty">
+				<input type="radio" name="r3c8" id="r3c8-e" class="s s-empty" checked>
+				<input type="radio" name="r3c8" id="r3c8-f" class="s s-fill">
+				<input type="radio" name="r3c8" id="r3c8-m" class="s s-mark">
+				<label class="to-fill"  for="r3c8-f"></label>
+				<label class="to-mark"  for="r3c8-m"></label>
+				<label class="to-empty" for="r3c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r3c9" id="r3c9-e" class="s s-empty" checked>
+				<input type="radio" name="r3c9" id="r3c9-f" class="s s-fill">
+				<input type="radio" name="r3c9" id="r3c9-m" class="s s-mark">
+				<label class="to-fill"  for="r3c9-f"></label>
+				<label class="to-mark"  for="r3c9-m"></label>
+				<label class="to-empty" for="r3c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-fill">
+				<input type="radio" name="r3c10" id="r3c10-e" class="s s-empty" checked>
+				<input type="radio" name="r3c10" id="r3c10-f" class="s s-fill">
+				<input type="radio" name="r3c10" id="r3c10-m" class="s s-mark">
+				<label class="to-fill"  for="r3c10-f"></label>
+				<label class="to-mark"  for="r3c10-m"></label>
+				<label class="to-empty" for="r3c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r4">
+			<div class="row-clue"><span>1</span><span>2</span><span>2</span><span>1</span></div>
+
+			<div class="cell c1 sol-fill">
+				<input type="radio" name="r4c1" id="r4c1-e" class="s s-empty" checked>
+				<input type="radio" name="r4c1" id="r4c1-f" class="s s-fill">
+				<input type="radio" name="r4c1" id="r4c1-m" class="s s-mark">
+				<label class="to-fill"  for="r4c1-f"></label>
+				<label class="to-mark"  for="r4c1-m"></label>
+				<label class="to-empty" for="r4c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r4c2" id="r4c2-e" class="s s-empty" checked>
+				<input type="radio" name="r4c2" id="r4c2-f" class="s s-fill">
+				<input type="radio" name="r4c2" id="r4c2-m" class="s s-mark">
+				<label class="to-fill"  for="r4c2-f"></label>
+				<label class="to-mark"  for="r4c2-m"></label>
+				<label class="to-empty" for="r4c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-fill">
+				<input type="radio" name="r4c3" id="r4c3-e" class="s s-empty" checked>
+				<input type="radio" name="r4c3" id="r4c3-f" class="s s-fill">
+				<input type="radio" name="r4c3" id="r4c3-m" class="s s-mark">
+				<label class="to-fill"  for="r4c3-f"></label>
+				<label class="to-mark"  for="r4c3-m"></label>
+				<label class="to-empty" for="r4c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-fill">
+				<input type="radio" name="r4c4" id="r4c4-e" class="s s-empty" checked>
+				<input type="radio" name="r4c4" id="r4c4-f" class="s s-fill">
+				<input type="radio" name="r4c4" id="r4c4-m" class="s s-mark">
+				<label class="to-fill"  for="r4c4-f"></label>
+				<label class="to-mark"  for="r4c4-m"></label>
+				<label class="to-empty" for="r4c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r4c5" id="r4c5-e" class="s s-empty" checked>
+				<input type="radio" name="r4c5" id="r4c5-f" class="s s-fill">
+				<input type="radio" name="r4c5" id="r4c5-m" class="s s-mark">
+				<label class="to-fill"  for="r4c5-f"></label>
+				<label class="to-mark"  for="r4c5-m"></label>
+				<label class="to-empty" for="r4c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r4c6" id="r4c6-e" class="s s-empty" checked>
+				<input type="radio" name="r4c6" id="r4c6-f" class="s s-fill">
+				<input type="radio" name="r4c6" id="r4c6-m" class="s s-mark">
+				<label class="to-fill"  for="r4c6-f"></label>
+				<label class="to-mark"  for="r4c6-m"></label>
+				<label class="to-empty" for="r4c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-fill">
+				<input type="radio" name="r4c7" id="r4c7-e" class="s s-empty" checked>
+				<input type="radio" name="r4c7" id="r4c7-f" class="s s-fill">
+				<input type="radio" name="r4c7" id="r4c7-m" class="s s-mark">
+				<label class="to-fill"  for="r4c7-f"></label>
+				<label class="to-mark"  for="r4c7-m"></label>
+				<label class="to-empty" for="r4c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-fill">
+				<input type="radio" name="r4c8" id="r4c8-e" class="s s-empty" checked>
+				<input type="radio" name="r4c8" id="r4c8-f" class="s s-fill">
+				<input type="radio" name="r4c8" id="r4c8-m" class="s s-mark">
+				<label class="to-fill"  for="r4c8-f"></label>
+				<label class="to-mark"  for="r4c8-m"></label>
+				<label class="to-empty" for="r4c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r4c9" id="r4c9-e" class="s s-empty" checked>
+				<input type="radio" name="r4c9" id="r4c9-f" class="s s-fill">
+				<input type="radio" name="r4c9" id="r4c9-m" class="s s-mark">
+				<label class="to-fill"  for="r4c9-f"></label>
+				<label class="to-mark"  for="r4c9-m"></label>
+				<label class="to-empty" for="r4c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-fill">
+				<input type="radio" name="r4c10" id="r4c10-e" class="s s-empty" checked>
+				<input type="radio" name="r4c10" id="r4c10-f" class="s s-fill">
+				<input type="radio" name="r4c10" id="r4c10-m" class="s s-mark">
+				<label class="to-fill"  for="r4c10-f"></label>
+				<label class="to-mark"  for="r4c10-m"></label>
+				<label class="to-empty" for="r4c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r5">
+			<div class="row-clue"><span>1</span><span>2</span><span>2</span><span>1</span></div>
+
+			<div class="cell c1 sol-fill">
+				<input type="radio" name="r5c1" id="r5c1-e" class="s s-empty" checked>
+				<input type="radio" name="r5c1" id="r5c1-f" class="s s-fill">
+				<input type="radio" name="r5c1" id="r5c1-m" class="s s-mark">
+				<label class="to-fill"  for="r5c1-f"></label>
+				<label class="to-mark"  for="r5c1-m"></label>
+				<label class="to-empty" for="r5c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r5c2" id="r5c2-e" class="s s-empty" checked>
+				<input type="radio" name="r5c2" id="r5c2-f" class="s s-fill">
+				<input type="radio" name="r5c2" id="r5c2-m" class="s s-mark">
+				<label class="to-fill"  for="r5c2-f"></label>
+				<label class="to-mark"  for="r5c2-m"></label>
+				<label class="to-empty" for="r5c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-fill">
+				<input type="radio" name="r5c3" id="r5c3-e" class="s s-empty" checked>
+				<input type="radio" name="r5c3" id="r5c3-f" class="s s-fill">
+				<input type="radio" name="r5c3" id="r5c3-m" class="s s-mark">
+				<label class="to-fill"  for="r5c3-f"></label>
+				<label class="to-mark"  for="r5c3-m"></label>
+				<label class="to-empty" for="r5c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-fill">
+				<input type="radio" name="r5c4" id="r5c4-e" class="s s-empty" checked>
+				<input type="radio" name="r5c4" id="r5c4-f" class="s s-fill">
+				<input type="radio" name="r5c4" id="r5c4-m" class="s s-mark">
+				<label class="to-fill"  for="r5c4-f"></label>
+				<label class="to-mark"  for="r5c4-m"></label>
+				<label class="to-empty" for="r5c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r5c5" id="r5c5-e" class="s s-empty" checked>
+				<input type="radio" name="r5c5" id="r5c5-f" class="s s-fill">
+				<input type="radio" name="r5c5" id="r5c5-m" class="s s-mark">
+				<label class="to-fill"  for="r5c5-f"></label>
+				<label class="to-mark"  for="r5c5-m"></label>
+				<label class="to-empty" for="r5c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r5c6" id="r5c6-e" class="s s-empty" checked>
+				<input type="radio" name="r5c6" id="r5c6-f" class="s s-fill">
+				<input type="radio" name="r5c6" id="r5c6-m" class="s s-mark">
+				<label class="to-fill"  for="r5c6-f"></label>
+				<label class="to-mark"  for="r5c6-m"></label>
+				<label class="to-empty" for="r5c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-fill">
+				<input type="radio" name="r5c7" id="r5c7-e" class="s s-empty" checked>
+				<input type="radio" name="r5c7" id="r5c7-f" class="s s-fill">
+				<input type="radio" name="r5c7" id="r5c7-m" class="s s-mark">
+				<label class="to-fill"  for="r5c7-f"></label>
+				<label class="to-mark"  for="r5c7-m"></label>
+				<label class="to-empty" for="r5c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-fill">
+				<input type="radio" name="r5c8" id="r5c8-e" class="s s-empty" checked>
+				<input type="radio" name="r5c8" id="r5c8-f" class="s s-fill">
+				<input type="radio" name="r5c8" id="r5c8-m" class="s s-mark">
+				<label class="to-fill"  for="r5c8-f"></label>
+				<label class="to-mark"  for="r5c8-m"></label>
+				<label class="to-empty" for="r5c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r5c9" id="r5c9-e" class="s s-empty" checked>
+				<input type="radio" name="r5c9" id="r5c9-f" class="s s-fill">
+				<input type="radio" name="r5c9" id="r5c9-m" class="s s-mark">
+				<label class="to-fill"  for="r5c9-f"></label>
+				<label class="to-mark"  for="r5c9-m"></label>
+				<label class="to-empty" for="r5c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-fill">
+				<input type="radio" name="r5c10" id="r5c10-e" class="s s-empty" checked>
+				<input type="radio" name="r5c10" id="r5c10-f" class="s s-fill">
+				<input type="radio" name="r5c10" id="r5c10-m" class="s s-mark">
+				<label class="to-fill"  for="r5c10-f"></label>
+				<label class="to-mark"  for="r5c10-m"></label>
+				<label class="to-empty" for="r5c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r6">
+			<div class="row-clue"><span>1</span><span>1</span></div>
+
+			<div class="cell c1 sol-fill">
+				<input type="radio" name="r6c1" id="r6c1-e" class="s s-empty" checked>
+				<input type="radio" name="r6c1" id="r6c1-f" class="s s-fill">
+				<input type="radio" name="r6c1" id="r6c1-m" class="s s-mark">
+				<label class="to-fill"  for="r6c1-f"></label>
+				<label class="to-mark"  for="r6c1-m"></label>
+				<label class="to-empty" for="r6c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r6c2" id="r6c2-e" class="s s-empty" checked>
+				<input type="radio" name="r6c2" id="r6c2-f" class="s s-fill">
+				<input type="radio" name="r6c2" id="r6c2-m" class="s s-mark">
+				<label class="to-fill"  for="r6c2-f"></label>
+				<label class="to-mark"  for="r6c2-m"></label>
+				<label class="to-empty" for="r6c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-empty">
+				<input type="radio" name="r6c3" id="r6c3-e" class="s s-empty" checked>
+				<input type="radio" name="r6c3" id="r6c3-f" class="s s-fill">
+				<input type="radio" name="r6c3" id="r6c3-m" class="s s-mark">
+				<label class="to-fill"  for="r6c3-f"></label>
+				<label class="to-mark"  for="r6c3-m"></label>
+				<label class="to-empty" for="r6c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-empty">
+				<input type="radio" name="r6c4" id="r6c4-e" class="s s-empty" checked>
+				<input type="radio" name="r6c4" id="r6c4-f" class="s s-fill">
+				<input type="radio" name="r6c4" id="r6c4-m" class="s s-mark">
+				<label class="to-fill"  for="r6c4-f"></label>
+				<label class="to-mark"  for="r6c4-m"></label>
+				<label class="to-empty" for="r6c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r6c5" id="r6c5-e" class="s s-empty" checked>
+				<input type="radio" name="r6c5" id="r6c5-f" class="s s-fill">
+				<input type="radio" name="r6c5" id="r6c5-m" class="s s-mark">
+				<label class="to-fill"  for="r6c5-f"></label>
+				<label class="to-mark"  for="r6c5-m"></label>
+				<label class="to-empty" for="r6c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r6c6" id="r6c6-e" class="s s-empty" checked>
+				<input type="radio" name="r6c6" id="r6c6-f" class="s s-fill">
+				<input type="radio" name="r6c6" id="r6c6-m" class="s s-mark">
+				<label class="to-fill"  for="r6c6-f"></label>
+				<label class="to-mark"  for="r6c6-m"></label>
+				<label class="to-empty" for="r6c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-empty">
+				<input type="radio" name="r6c7" id="r6c7-e" class="s s-empty" checked>
+				<input type="radio" name="r6c7" id="r6c7-f" class="s s-fill">
+				<input type="radio" name="r6c7" id="r6c7-m" class="s s-mark">
+				<label class="to-fill"  for="r6c7-f"></label>
+				<label class="to-mark"  for="r6c7-m"></label>
+				<label class="to-empty" for="r6c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-empty">
+				<input type="radio" name="r6c8" id="r6c8-e" class="s s-empty" checked>
+				<input type="radio" name="r6c8" id="r6c8-f" class="s s-fill">
+				<input type="radio" name="r6c8" id="r6c8-m" class="s s-mark">
+				<label class="to-fill"  for="r6c8-f"></label>
+				<label class="to-mark"  for="r6c8-m"></label>
+				<label class="to-empty" for="r6c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r6c9" id="r6c9-e" class="s s-empty" checked>
+				<input type="radio" name="r6c9" id="r6c9-f" class="s s-fill">
+				<input type="radio" name="r6c9" id="r6c9-m" class="s s-mark">
+				<label class="to-fill"  for="r6c9-f"></label>
+				<label class="to-mark"  for="r6c9-m"></label>
+				<label class="to-empty" for="r6c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-fill">
+				<input type="radio" name="r6c10" id="r6c10-e" class="s s-empty" checked>
+				<input type="radio" name="r6c10" id="r6c10-f" class="s s-fill">
+				<input type="radio" name="r6c10" id="r6c10-m" class="s s-mark">
+				<label class="to-fill"  for="r6c10-f"></label>
+				<label class="to-mark"  for="r6c10-m"></label>
+				<label class="to-empty" for="r6c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r7">
+			<div class="row-clue"><span>1</span><span>1</span><span>1</span><span>1</span></div>
+
+			<div class="cell c1 sol-fill">
+				<input type="radio" name="r7c1" id="r7c1-e" class="s s-empty" checked>
+				<input type="radio" name="r7c1" id="r7c1-f" class="s s-fill">
+				<input type="radio" name="r7c1" id="r7c1-m" class="s s-mark">
+				<label class="to-fill"  for="r7c1-f"></label>
+				<label class="to-mark"  for="r7c1-m"></label>
+				<label class="to-empty" for="r7c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r7c2" id="r7c2-e" class="s s-empty" checked>
+				<input type="radio" name="r7c2" id="r7c2-f" class="s s-fill">
+				<input type="radio" name="r7c2" id="r7c2-m" class="s s-mark">
+				<label class="to-fill"  for="r7c2-f"></label>
+				<label class="to-mark"  for="r7c2-m"></label>
+				<label class="to-empty" for="r7c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-fill">
+				<input type="radio" name="r7c3" id="r7c3-e" class="s s-empty" checked>
+				<input type="radio" name="r7c3" id="r7c3-f" class="s s-fill">
+				<input type="radio" name="r7c3" id="r7c3-m" class="s s-mark">
+				<label class="to-fill"  for="r7c3-f"></label>
+				<label class="to-mark"  for="r7c3-m"></label>
+				<label class="to-empty" for="r7c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-empty">
+				<input type="radio" name="r7c4" id="r7c4-e" class="s s-empty" checked>
+				<input type="radio" name="r7c4" id="r7c4-f" class="s s-fill">
+				<input type="radio" name="r7c4" id="r7c4-m" class="s s-mark">
+				<label class="to-fill"  for="r7c4-f"></label>
+				<label class="to-mark"  for="r7c4-m"></label>
+				<label class="to-empty" for="r7c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r7c5" id="r7c5-e" class="s s-empty" checked>
+				<input type="radio" name="r7c5" id="r7c5-f" class="s s-fill">
+				<input type="radio" name="r7c5" id="r7c5-m" class="s s-mark">
+				<label class="to-fill"  for="r7c5-f"></label>
+				<label class="to-mark"  for="r7c5-m"></label>
+				<label class="to-empty" for="r7c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r7c6" id="r7c6-e" class="s s-empty" checked>
+				<input type="radio" name="r7c6" id="r7c6-f" class="s s-fill">
+				<input type="radio" name="r7c6" id="r7c6-m" class="s s-mark">
+				<label class="to-fill"  for="r7c6-f"></label>
+				<label class="to-mark"  for="r7c6-m"></label>
+				<label class="to-empty" for="r7c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-empty">
+				<input type="radio" name="r7c7" id="r7c7-e" class="s s-empty" checked>
+				<input type="radio" name="r7c7" id="r7c7-f" class="s s-fill">
+				<input type="radio" name="r7c7" id="r7c7-m" class="s s-mark">
+				<label class="to-fill"  for="r7c7-f"></label>
+				<label class="to-mark"  for="r7c7-m"></label>
+				<label class="to-empty" for="r7c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-fill">
+				<input type="radio" name="r7c8" id="r7c8-e" class="s s-empty" checked>
+				<input type="radio" name="r7c8" id="r7c8-f" class="s s-fill">
+				<input type="radio" name="r7c8" id="r7c8-m" class="s s-mark">
+				<label class="to-fill"  for="r7c8-f"></label>
+				<label class="to-mark"  for="r7c8-m"></label>
+				<label class="to-empty" for="r7c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r7c9" id="r7c9-e" class="s s-empty" checked>
+				<input type="radio" name="r7c9" id="r7c9-f" class="s s-fill">
+				<input type="radio" name="r7c9" id="r7c9-m" class="s s-mark">
+				<label class="to-fill"  for="r7c9-f"></label>
+				<label class="to-mark"  for="r7c9-m"></label>
+				<label class="to-empty" for="r7c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-fill">
+				<input type="radio" name="r7c10" id="r7c10-e" class="s s-empty" checked>
+				<input type="radio" name="r7c10" id="r7c10-f" class="s s-fill">
+				<input type="radio" name="r7c10" id="r7c10-m" class="s s-mark">
+				<label class="to-fill"  for="r7c10-f"></label>
+				<label class="to-mark"  for="r7c10-m"></label>
+				<label class="to-empty" for="r7c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r8">
+			<div class="row-clue"><span>1</span><span>4</span><span>1</span></div>
+
+			<div class="cell c1 sol-fill">
+				<input type="radio" name="r8c1" id="r8c1-e" class="s s-empty" checked>
+				<input type="radio" name="r8c1" id="r8c1-f" class="s s-fill">
+				<input type="radio" name="r8c1" id="r8c1-m" class="s s-mark">
+				<label class="to-fill"  for="r8c1-f"></label>
+				<label class="to-mark"  for="r8c1-m"></label>
+				<label class="to-empty" for="r8c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r8c2" id="r8c2-e" class="s s-empty" checked>
+				<input type="radio" name="r8c2" id="r8c2-f" class="s s-fill">
+				<input type="radio" name="r8c2" id="r8c2-m" class="s s-mark">
+				<label class="to-fill"  for="r8c2-f"></label>
+				<label class="to-mark"  for="r8c2-m"></label>
+				<label class="to-empty" for="r8c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-empty">
+				<input type="radio" name="r8c3" id="r8c3-e" class="s s-empty" checked>
+				<input type="radio" name="r8c3" id="r8c3-f" class="s s-fill">
+				<input type="radio" name="r8c3" id="r8c3-m" class="s s-mark">
+				<label class="to-fill"  for="r8c3-f"></label>
+				<label class="to-mark"  for="r8c3-m"></label>
+				<label class="to-empty" for="r8c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-fill">
+				<input type="radio" name="r8c4" id="r8c4-e" class="s s-empty" checked>
+				<input type="radio" name="r8c4" id="r8c4-f" class="s s-fill">
+				<input type="radio" name="r8c4" id="r8c4-m" class="s s-mark">
+				<label class="to-fill"  for="r8c4-f"></label>
+				<label class="to-mark"  for="r8c4-m"></label>
+				<label class="to-empty" for="r8c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-fill">
+				<input type="radio" name="r8c5" id="r8c5-e" class="s s-empty" checked>
+				<input type="radio" name="r8c5" id="r8c5-f" class="s s-fill">
+				<input type="radio" name="r8c5" id="r8c5-m" class="s s-mark">
+				<label class="to-fill"  for="r8c5-f"></label>
+				<label class="to-mark"  for="r8c5-m"></label>
+				<label class="to-empty" for="r8c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-fill">
+				<input type="radio" name="r8c6" id="r8c6-e" class="s s-empty" checked>
+				<input type="radio" name="r8c6" id="r8c6-f" class="s s-fill">
+				<input type="radio" name="r8c6" id="r8c6-m" class="s s-mark">
+				<label class="to-fill"  for="r8c6-f"></label>
+				<label class="to-mark"  for="r8c6-m"></label>
+				<label class="to-empty" for="r8c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-fill">
+				<input type="radio" name="r8c7" id="r8c7-e" class="s s-empty" checked>
+				<input type="radio" name="r8c7" id="r8c7-f" class="s s-fill">
+				<input type="radio" name="r8c7" id="r8c7-m" class="s s-mark">
+				<label class="to-fill"  for="r8c7-f"></label>
+				<label class="to-mark"  for="r8c7-m"></label>
+				<label class="to-empty" for="r8c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-empty">
+				<input type="radio" name="r8c8" id="r8c8-e" class="s s-empty" checked>
+				<input type="radio" name="r8c8" id="r8c8-f" class="s s-fill">
+				<input type="radio" name="r8c8" id="r8c8-m" class="s s-mark">
+				<label class="to-fill"  for="r8c8-f"></label>
+				<label class="to-mark"  for="r8c8-m"></label>
+				<label class="to-empty" for="r8c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r8c9" id="r8c9-e" class="s s-empty" checked>
+				<input type="radio" name="r8c9" id="r8c9-f" class="s s-fill">
+				<input type="radio" name="r8c9" id="r8c9-m" class="s s-mark">
+				<label class="to-fill"  for="r8c9-f"></label>
+				<label class="to-mark"  for="r8c9-m"></label>
+				<label class="to-empty" for="r8c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-fill">
+				<input type="radio" name="r8c10" id="r8c10-e" class="s s-empty" checked>
+				<input type="radio" name="r8c10" id="r8c10-f" class="s s-fill">
+				<input type="radio" name="r8c10" id="r8c10-m" class="s s-mark">
+				<label class="to-fill"  for="r8c10-f"></label>
+				<label class="to-mark"  for="r8c10-m"></label>
+				<label class="to-empty" for="r8c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r9">
+			<div class="row-clue"><span>1</span><span>1</span></div>
+
+			<div class="cell c1 sol-empty">
+				<input type="radio" name="r9c1" id="r9c1-e" class="s s-empty" checked>
+				<input type="radio" name="r9c1" id="r9c1-f" class="s s-fill">
+				<input type="radio" name="r9c1" id="r9c1-m" class="s s-mark">
+				<label class="to-fill"  for="r9c1-f"></label>
+				<label class="to-mark"  for="r9c1-m"></label>
+				<label class="to-empty" for="r9c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-fill">
+				<input type="radio" name="r9c2" id="r9c2-e" class="s s-empty" checked>
+				<input type="radio" name="r9c2" id="r9c2-f" class="s s-fill">
+				<input type="radio" name="r9c2" id="r9c2-m" class="s s-mark">
+				<label class="to-fill"  for="r9c2-f"></label>
+				<label class="to-mark"  for="r9c2-m"></label>
+				<label class="to-empty" for="r9c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-empty">
+				<input type="radio" name="r9c3" id="r9c3-e" class="s s-empty" checked>
+				<input type="radio" name="r9c3" id="r9c3-f" class="s s-fill">
+				<input type="radio" name="r9c3" id="r9c3-m" class="s s-mark">
+				<label class="to-fill"  for="r9c3-f"></label>
+				<label class="to-mark"  for="r9c3-m"></label>
+				<label class="to-empty" for="r9c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-empty">
+				<input type="radio" name="r9c4" id="r9c4-e" class="s s-empty" checked>
+				<input type="radio" name="r9c4" id="r9c4-f" class="s s-fill">
+				<input type="radio" name="r9c4" id="r9c4-m" class="s s-mark">
+				<label class="to-fill"  for="r9c4-f"></label>
+				<label class="to-mark"  for="r9c4-m"></label>
+				<label class="to-empty" for="r9c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-empty">
+				<input type="radio" name="r9c5" id="r9c5-e" class="s s-empty" checked>
+				<input type="radio" name="r9c5" id="r9c5-f" class="s s-fill">
+				<input type="radio" name="r9c5" id="r9c5-m" class="s s-mark">
+				<label class="to-fill"  for="r9c5-f"></label>
+				<label class="to-mark"  for="r9c5-m"></label>
+				<label class="to-empty" for="r9c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-empty">
+				<input type="radio" name="r9c6" id="r9c6-e" class="s s-empty" checked>
+				<input type="radio" name="r9c6" id="r9c6-f" class="s s-fill">
+				<input type="radio" name="r9c6" id="r9c6-m" class="s s-mark">
+				<label class="to-fill"  for="r9c6-f"></label>
+				<label class="to-mark"  for="r9c6-m"></label>
+				<label class="to-empty" for="r9c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-empty">
+				<input type="radio" name="r9c7" id="r9c7-e" class="s s-empty" checked>
+				<input type="radio" name="r9c7" id="r9c7-f" class="s s-fill">
+				<input type="radio" name="r9c7" id="r9c7-m" class="s s-mark">
+				<label class="to-fill"  for="r9c7-f"></label>
+				<label class="to-mark"  for="r9c7-m"></label>
+				<label class="to-empty" for="r9c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-empty">
+				<input type="radio" name="r9c8" id="r9c8-e" class="s s-empty" checked>
+				<input type="radio" name="r9c8" id="r9c8-f" class="s s-fill">
+				<input type="radio" name="r9c8" id="r9c8-m" class="s s-mark">
+				<label class="to-fill"  for="r9c8-f"></label>
+				<label class="to-mark"  for="r9c8-m"></label>
+				<label class="to-empty" for="r9c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-fill">
+				<input type="radio" name="r9c9" id="r9c9-e" class="s s-empty" checked>
+				<input type="radio" name="r9c9" id="r9c9-f" class="s s-fill">
+				<input type="radio" name="r9c9" id="r9c9-m" class="s s-mark">
+				<label class="to-fill"  for="r9c9-f"></label>
+				<label class="to-mark"  for="r9c9-m"></label>
+				<label class="to-empty" for="r9c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-empty">
+				<input type="radio" name="r9c10" id="r9c10-e" class="s s-empty" checked>
+				<input type="radio" name="r9c10" id="r9c10-f" class="s s-fill">
+				<input type="radio" name="r9c10" id="r9c10-m" class="s s-mark">
+				<label class="to-fill"  for="r9c10-f"></label>
+				<label class="to-mark"  for="r9c10-m"></label>
+				<label class="to-empty" for="r9c10-e"></label>
+			</div>
+	
+		</div>
+		
+		<div class="row r10">
+			<div class="row-clue"><span>6</span></div>
+
+			<div class="cell c1 sol-empty">
+				<input type="radio" name="r10c1" id="r10c1-e" class="s s-empty" checked>
+				<input type="radio" name="r10c1" id="r10c1-f" class="s s-fill">
+				<input type="radio" name="r10c1" id="r10c1-m" class="s s-mark">
+				<label class="to-fill"  for="r10c1-f"></label>
+				<label class="to-mark"  for="r10c1-m"></label>
+				<label class="to-empty" for="r10c1-e"></label>
+			</div>
+	
+			<div class="cell c2 sol-empty">
+				<input type="radio" name="r10c2" id="r10c2-e" class="s s-empty" checked>
+				<input type="radio" name="r10c2" id="r10c2-f" class="s s-fill">
+				<input type="radio" name="r10c2" id="r10c2-m" class="s s-mark">
+				<label class="to-fill"  for="r10c2-f"></label>
+				<label class="to-mark"  for="r10c2-m"></label>
+				<label class="to-empty" for="r10c2-e"></label>
+			</div>
+	
+			<div class="cell c3 sol-fill">
+				<input type="radio" name="r10c3" id="r10c3-e" class="s s-empty" checked>
+				<input type="radio" name="r10c3" id="r10c3-f" class="s s-fill">
+				<input type="radio" name="r10c3" id="r10c3-m" class="s s-mark">
+				<label class="to-fill"  for="r10c3-f"></label>
+				<label class="to-mark"  for="r10c3-m"></label>
+				<label class="to-empty" for="r10c3-e"></label>
+			</div>
+	
+			<div class="cell c4 sol-fill">
+				<input type="radio" name="r10c4" id="r10c4-e" class="s s-empty" checked>
+				<input type="radio" name="r10c4" id="r10c4-f" class="s s-fill">
+				<input type="radio" name="r10c4" id="r10c4-m" class="s s-mark">
+				<label class="to-fill"  for="r10c4-f"></label>
+				<label class="to-mark"  for="r10c4-m"></label>
+				<label class="to-empty" for="r10c4-e"></label>
+			</div>
+	
+			<div class="cell c5 sol-fill">
+				<input type="radio" name="r10c5" id="r10c5-e" class="s s-empty" checked>
+				<input type="radio" name="r10c5" id="r10c5-f" class="s s-fill">
+				<input type="radio" name="r10c5" id="r10c5-m" class="s s-mark">
+				<label class="to-fill"  for="r10c5-f"></label>
+				<label class="to-mark"  for="r10c5-m"></label>
+				<label class="to-empty" for="r10c5-e"></label>
+			</div>
+	
+			<div class="cell c6 sol-fill">
+				<input type="radio" name="r10c6" id="r10c6-e" class="s s-empty" checked>
+				<input type="radio" name="r10c6" id="r10c6-f" class="s s-fill">
+				<input type="radio" name="r10c6" id="r10c6-m" class="s s-mark">
+				<label class="to-fill"  for="r10c6-f"></label>
+				<label class="to-mark"  for="r10c6-m"></label>
+				<label class="to-empty" for="r10c6-e"></label>
+			</div>
+	
+			<div class="cell c7 sol-fill">
+				<input type="radio" name="r10c7" id="r10c7-e" class="s s-empty" checked>
+				<input type="radio" name="r10c7" id="r10c7-f" class="s s-fill">
+				<input type="radio" name="r10c7" id="r10c7-m" class="s s-mark">
+				<label class="to-fill"  for="r10c7-f"></label>
+				<label class="to-mark"  for="r10c7-m"></label>
+				<label class="to-empty" for="r10c7-e"></label>
+			</div>
+	
+			<div class="cell c8 sol-fill">
+				<input type="radio" name="r10c8" id="r10c8-e" class="s s-empty" checked>
+				<input type="radio" name="r10c8" id="r10c8-f" class="s s-fill">
+				<input type="radio" name="r10c8" id="r10c8-m" class="s s-mark">
+				<label class="to-fill"  for="r10c8-f"></label>
+				<label class="to-mark"  for="r10c8-m"></label>
+				<label class="to-empty" for="r10c8-e"></label>
+			</div>
+	
+			<div class="cell c9 sol-empty">
+				<input type="radio" name="r10c9" id="r10c9-e" class="s s-empty" checked>
+				<input type="radio" name="r10c9" id="r10c9-f" class="s s-fill">
+				<input type="radio" name="r10c9" id="r10c9-m" class="s s-mark">
+				<label class="to-fill"  for="r10c9-f"></label>
+				<label class="to-mark"  for="r10c9-m"></label>
+				<label class="to-empty" for="r10c9-e"></label>
+			</div>
+	
+			<div class="cell c10 sol-empty">
+				<input type="radio" name="r10c10" id="r10c10-e" class="s s-empty" checked>
+				<input type="radio" name="r10c10" id="r10c10-f" class="s s-fill">
+				<input type="radio" name="r10c10" id="r10c10-m" class="s s-mark">
+				<label class="to-fill"  for="r10c10-f"></label>
+				<label class="to-mark"  for="r10c10-m"></label>
+				<label class="to-empty" for="r10c10-e"></label>
+			</div>
+	
+		</div>
+		
+	
     </div>
 
     <div class="win">Solved!</div>

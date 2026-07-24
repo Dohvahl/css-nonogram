@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Nonogram</title>
+  <link rel="stylesheet" href="nonogram.css">
+  <link rel="stylesheet" href="puzzle.generated.css">
+</head>
+<body>
+  <main class="puzzle">
+    <h1>Nonogram</h1>
+
+	<!-- Unchecked = fill mode, checked = mark mode. -->
+    <input type="checkbox" id="mode-mark" class="mode">
+    <label class="mode-switch" for="mode-mark">
+      <span class="mode-fill">Fill</span>
+      <span class="mode-mark">Mark</span>
+    </label>
+
+    <div class="board">
+{{board}}
+    </div>
+
+    <div class="win">Solved!</div>
+  </main>
+</body>
+</html>
