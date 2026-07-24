@@ -1,0 +1,107 @@
+#heart {
+  --cols: 5;
+  --clue-w: 3.1rem;
+}
+#heart:not(
+    :has(.c1.sol-fill .s-fill:not(:checked), .c1.sol-empty .s-fill:checked)
+  )
+  .cc1 {
+  color: var(--clue-done);
+}
+#heart:not(
+    :has(.c2.sol-fill .s-fill:not(:checked), .c2.sol-empty .s-fill:checked)
+  )
+  .cc2 {
+  color: var(--clue-done);
+}
+#heart:not(
+    :has(.c3.sol-fill .s-fill:not(:checked), .c3.sol-empty .s-fill:checked)
+  )
+  .cc3 {
+  color: var(--clue-done);
+}
+#heart:not(
+    :has(.c4.sol-fill .s-fill:not(:checked), .c4.sol-empty .s-fill:checked)
+  )
+  .cc4 {
+  color: var(--clue-done);
+}
+#heart:not(
+    :has(.c5.sol-fill .s-fill:not(:checked), .c5.sol-empty .s-fill:checked)
+  )
+  .cc5 {
+  color: var(--clue-done);
+}
+body:has(#heart:target) .puzzle-nav a[href="#heart"] {
+  background: var(--accent);
+  color: var(--cell-bg);
+}
+
+#smiley {
+  --cols: 10;
+  --clue-w: 5.3rem;
+}
+#smiley:not(
+    :has(.c1.sol-fill .s-fill:not(:checked), .c1.sol-empty .s-fill:checked)
+  )
+  .cc1 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c2.sol-fill .s-fill:not(:checked), .c2.sol-empty .s-fill:checked)
+  )
+  .cc2 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c3.sol-fill .s-fill:not(:checked), .c3.sol-empty .s-fill:checked)
+  )
+  .cc3 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c4.sol-fill .s-fill:not(:checked), .c4.sol-empty .s-fill:checked)
+  )
+  .cc4 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c5.sol-fill .s-fill:not(:checked), .c5.sol-empty .s-fill:checked)
+  )
+  .cc5 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c6.sol-fill .s-fill:not(:checked), .c6.sol-empty .s-fill:checked)
+  )
+  .cc6 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c7.sol-fill .s-fill:not(:checked), .c7.sol-empty .s-fill:checked)
+  )
+  .cc7 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c8.sol-fill .s-fill:not(:checked), .c8.sol-empty .s-fill:checked)
+  )
+  .cc8 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c9.sol-fill .s-fill:not(:checked), .c9.sol-empty .s-fill:checked)
+  )
+  .cc9 {
+  color: var(--clue-done);
+}
+#smiley:not(
+    :has(.c10.sol-fill .s-fill:not(:checked), .c10.sol-empty .s-fill:checked)
+  )
+  .cc10 {
+  color: var(--clue-done);
+}
+body:has(#smiley:target) .puzzle-nav a[href="#smiley"] {
+  background: var(--accent);
+  color: var(--cell-bg);
+}

@@ -1,28 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Nonogram</title>
-  <link rel="stylesheet" href="nonogram.css">
-  <link rel="stylesheet" href="puzzle.generated.css">
-</head>
-<body>
-  <main class="puzzle">
-    <h1>Nonogram</h1>
-
-	<!-- Unchecked = fill mode, checked = mark mode. -->
-    <input type="checkbox" id="mode-mark" class="mode">
-    <label class="mode-switch" for="mode-mark">
-      <span class="mode-fill">Fill</span>
-      <span class="mode-mark">Mark</span>
-    </label>
-
-    <div class="board">
-{{board}}
-    </div>
-
-    <div class="win">Solved!</div>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Nonogram</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="nonogram.css" />
+    <link rel="stylesheet" href="puzzles.generated.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Nonogram</h1>
+      <nav class="puzzle-nav">{{nav}}</nav>
+      <fieldset class="accent-picker">
+        <legend class="visually-hidden">Accent color</legend>
+        <input
+          type="radio"
+          name="accent"
+          id="accent-slate"
+          aria-label="Slate"
+          checked
+        />
+        <label for="accent-slate"></label>
+        <input
+          type="radio"
+          name="accent"
+          id="accent-indigo"
+          aria-label="Indigo"
+        />
+        <label for="accent-indigo"></label>
+        <input type="radio" name="accent" id="accent-teal" aria-label="Teal" />
+        <label for="accent-teal"></label>
+        <input type="radio" name="accent" id="accent-rose" aria-label="Rose" />
+        <label for="accent-rose"></label>
+        <input
+          type="radio"
+          name="accent"
+          id="accent-violet"
+          aria-label="Violet"
+        />
+        <label for="accent-violet"></label>
+      </fieldset>
+    </header>
+    <main>{{puzzles}}</main>
+  </body>
 </html>

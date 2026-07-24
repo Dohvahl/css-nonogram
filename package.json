@@ -4,12 +4,14 @@
   "description": "A playable nonogram in pure HTML and CSS, with a build-time board generator.",
   "type": "module",
   "scripts": {
+    "format": "prettier --write .",
     "gen": "node puzzle-gen/generate.ts",
     "test": "node --test puzzle-gen/clues.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "typescript": "^5.8.0",
-    "@types/node": "^24.0.0"
+    "@types/node": "^24.0.0",
+    "prettier": "^3.9.5"
   }
 }
