@@ -405,12 +405,17 @@ body:has(#accent-violet:checked) {
   transform: none;
 }
 
-/* Once solved, freeze the board to clicks. Keyboard can still change a cell,
-   which simply un-solves the puzzle and resumes play. */
+/* Once solved, make the cells inert — no clicks and no hover feedback.
+   pointer-events:none on the cell blocks both its labels (verified: a `none`
+   parent disables default-`auto` children) and the cell's own :hover states.
+   Keyboard can still change a cell, which un-solves the puzzle and resumes play. */
 .puzzle:not(:has(.sol-fill .s-fill:not(:checked), .sol-empty .s-fill:checked))
-  .cell
-  label {
+  .cell {
   pointer-events: none;
+}
+.puzzle:not(:has(.sol-fill .s-fill:not(:checked), .sol-empty .s-fill:checked))
+  .cell:hover {
+  background: initial;
 }
 
 /* Row Solution checking */
